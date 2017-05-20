@@ -6,8 +6,11 @@
 
 var HelloWorld = function() {};
 
-HelloWorld.prototype.hello = function(input) {
-    return `Hello, ${input || 'World'}!`;
-};
+function helloWorld(input) {
+    input = input ? input : 'World';
+    return 'Hello, ' + input +'!';
+}
+
+HelloWorld.prototype.hello = helloWorld;
 
 module.exports = HelloWorld;
